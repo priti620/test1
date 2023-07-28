@@ -1,10 +1,17 @@
 terraform {
-  required_version = ">= 0.12"
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "3.63.0"
+    }
+  }
+ 
 }
-
 provider "google" {
-  project = var.gcp_project
-  region  = var.gcp_region
+  # Configuration options
+  project = "terraform-assignment-393108"
+  region  = "us-central1"
+  zone    = "us-central1-a"
 }
 
 resource "google_compute_instance" "demo" {
@@ -26,15 +33,4 @@ resource "google_compute_instance" "demo" {
     }
   }
 
-  service_account {
-    scopes = ["compute-ro", "monitoring", "service-control"]
   }
-
-  labels = {
-    name  = var.instance_name
-    owner = "roger"
-    ttl   = "-1"
-  }
-
-  allow_stopping_for_update = true
-}
