@@ -10,8 +10,8 @@ terraform {
 provider "google" {
   # Configuration options
   project = "terraform-assignment-393108"
-  region  = "us-central1"
-  zone    = "us-central1-a"
+  region  = "us-east1"
+  zone    = "us-east1-a"
   credentials  ="keys.json"
 }
 
