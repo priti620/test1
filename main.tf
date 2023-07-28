@@ -12,6 +12,7 @@ provider "google" {
   project = "terraform-assignment-393108"
   region  = "us-central1"
   zone    = "us-central1-a"
+  credentials  ="keys.json"
 }
 
 resource "google_compute_instance" "demo" {
