@@ -20,10 +20,10 @@ variable "machine_type" {
 
 variable "instance_name" {
   description = "GCP instance name"
-  default     = "se-hangout-demo"
+  default     = "test-demo"
 }
 
 variable "image" {
   description = "image to build instance from"
-  default     = "debian-cloud/debian-9"
+  default     = "debian-9-stretch-v20210916"
 }
